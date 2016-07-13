@@ -39,17 +39,17 @@ var/list/lunchables_snacks_ = list(/obj/item/weapon/reagent_containers/food/snac
                                    /obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice,
                                    /obj/item/weapon/reagent_containers/food/snacks/skrellsnacks)
 
-var/list/lunchables_drinks_ = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/starkist,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/space_up,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/lemon_lime,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/tonic,
-                                   /obj/item/weapon/reagent_containers/food/drinks/cans/sodawater)
+var/list/lunchables_drinks_ = list(/obj/item/weapon/reagent_containers/glass/drinks/cans/cola,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/waterbottle,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/space_mountain_wind,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/dr_gibb,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/starkist,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/space_up,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/lemon_lime,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/iced_tea,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/grape_juice,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/tonic,
+                                   /obj/item/weapon/reagent_containers/glass/drinks/cans/sodawater)
 
 // This default list is a bit different, it contains items we don't want
 var/list/lunchables_drink_reagents_ = list(/datum/reagent/drink/nothing,

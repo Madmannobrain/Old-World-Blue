@@ -15,6 +15,7 @@
 	w_class = 2
 	flags = OPENCONTAINER
 	unacidable = 1 //glass doesn't dissolve in acid
+	var/isGlass = 1
 
 	var/label_text = ""
 
@@ -44,6 +45,120 @@
 		/obj/machinery/radiocarbon_spectrometer,
 		/obj/machinery/xenobio2/manualinjector
 		)
+
+	attack_self()
+		..()
+		if(is_open_container())
+			usr << "<span class = 'notice'>You put the lid on \the [src].</span>"
+			flags ^= OPENCONTAINER
+		else
+			usr << "<span class = 'notice'>You take the lid off \the [src].</span>"
+			flags |= OPENCONTAINER
+		update_icon()
+
+	afterattack(var/obj/target, var/mob/user, var/flag)
+		if(!flag)
+			return
+		..()
+
+		if(!is_open_container()) return
+
+		for(var/type in can_be_placed_into)
+			if(istype(target, type))
+				return
+
+		if(user.a_intent == I_HELP)
+			if(standard_feed_mob(user, target))
+				return
+		else if(standard_splash_mob(user, target))
+			return
+
+		if(standard_dispenser_refill(user, target))
+			return
+		if(standard_pour_into(user, target))
+			return
+
+		if(reagents && reagents.total_volume)
+			user << "<span class='notice'>You splash the solution onto [target].</span>"
+			reagents.splash(target, reagents.total_volume)
+			return
+
+	self_feed_message(var/mob/user)
+		user << "<span class='notice'>You swallow a gulp from \the [src].</span>"
+
+	feed_sound(var/mob/user)
+		playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
+
+	bullet_act(var/obj/item/projectile/bullet/Proj)
+		..()
+		if(Proj.damage_type != BRUTE)
+			return
+
+		if(reagents && reagents.total_volume)
+			reagents.splash(src.loc, reagents.total_volume)
+			qdel(reagents)
+
+		if(!isGlass)
+			visible_message("<span class = 'warning'>Bullet flies through the [src], splashing it's contents all around!</span>")
+
+			name = "spoiled [name]"
+			desc = "It's kinda useless now, you know. Think first, shoot after."
+
+			var/image/hole = image('icons/effects/effects.dmi', "scorch")
+			hole.pixel_x = rand(-3,3)+14
+			hole.pixel_y = rand(-5,5)+14
+			overlays += hole
+
+		else
+			isGlass = 0
+			visible_message("<span class = 'warning'>The [src] explodes in the shower of shards!</span>")
+
+			var/obj/item/weapon/broken_bottle/B = new(loc)
+			B.name = "broken [name]"
+			B.force = src.force
+			B.icon_state = src.icon_state
+			var/icon/Q = new(src.icon, B.icon_state)
+			Q.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
+			Q.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+			B.icon = Q
+			B.pixel_x = pixel_x
+			B.pixel_y = pixel_y
+			src.transfer_fingerprints_to(B)
+
+			playsound(src, "shatter", 70, 1)
+			if(prob(66))
+				new /obj/item/weapon/material/shard(src.loc)
+			qdel(src)
+
+	throw_impact(var/atom/hit_atom)
+		..()
+		if(isGlass && prob(30))
+			visible_message("<span class = 'warning'>The [src] explodes in the shower of shards!</span>")
+
+			if(reagents && reagents.total_volume)
+				if(isliving(hit_atom))
+					visible_message("<span class = 'warning'>The soluton splashes all over the [hit_atom]!</span>")
+					reagents.splash(hit_atom, reagents.total_volume)
+				else
+					reagents.splash(hit_atom, reagents.total_volume)
+
+			//create new broken bottle
+			var/obj/item/weapon/broken_bottle/B = new /obj/item/weapon/broken_bottle(loc)
+			B.force = src.force
+			B.icon_state = src.icon_state
+
+			src.transfer_fingerprints_to(B)
+
+			var/icon/Q = new(src.icon, B.icon_state)
+			Q.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
+			Q.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+			B.icon = Q
+
+			playsound(src, "shatter", 70, 1)
+
+			if(prob(50))
+				new /obj/item/weapon/material/shard(src.loc)
+			qdel(src)
 
 /obj/item/weapon/reagent_containers/glass/New()
 	..()
@@ -180,6 +295,7 @@
 	volume = 60
 	amount_per_transfer_from_this = 10
 	flags = OPENCONTAINER | NOREACT
+	isGlass = 0
 
 /obj/item/weapon/reagent_containers/glass/beaker/bluespace
 	name = "bluespace beaker"
@@ -190,6 +306,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,25,30,60,120,300)
 	flags = OPENCONTAINER
+	isGlass = 0
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
 	name = "vial"
@@ -224,6 +341,7 @@
 	volume = 120
 	flags = OPENCONTAINER
 	unacidable = 0
+	isGlass = 0
 
 /obj/item/weapon/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
 	if(isprox(D))

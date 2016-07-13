@@ -43,7 +43,7 @@
 
 /datum/autolathe/recipe/drinkingglass
 	name = "drinking glass"
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/square
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/square
 	category = "General"
 	New()
 		..()
@@ -51,25 +51,25 @@
 		name = initial(O.name) // generic recipes yay
 
 /datum/autolathe/recipe/drinkingglass/rocks
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/rocks
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/rocks
 
 /datum/autolathe/recipe/drinkingglass/shake
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/shake
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/shake
 
 /datum/autolathe/recipe/drinkingglass/cocktail
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/cocktail
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/cocktail
 
 /datum/autolathe/recipe/drinkingglass/shot
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/shot
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/shot
 
 /datum/autolathe/recipe/drinkingglass/pint
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/pint
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/pint
 
 /datum/autolathe/recipe/drinkingglass/mug
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/mug
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/mug
 
 /datum/autolathe/recipe/drinkingglass/wine
-	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/wine
+	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/wine
 
 /datum/autolathe/recipe/flashlight
 	name = "flashlight"

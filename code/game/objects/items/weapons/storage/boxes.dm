@@ -350,7 +350,7 @@
 /obj/item/weapon/storage/box/cups/New()
 	..()
 	for(var/i = 1 to 7)
-		new /obj/item/weapon/reagent_containers/food/drinks/sillycup(src)
+		new /obj/item/weapon/reagent_containers/glass/drinks/sillycup(src)
 
 /obj/item/weapon/storage/box/donkpockets
 	name = "box of donk-pockets"

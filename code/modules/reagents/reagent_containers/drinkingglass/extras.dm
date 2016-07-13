@@ -1,4 +1,4 @@
-/obj/item/weapon/reagent_containers/food/drinks/glass2/attackby(obj/item/I as obj, mob/user as mob)
+/obj/item/weapon/reagent_containers/glass/drinks/glass2/attackby(obj/item/I as obj, mob/user as mob)
 	if(extras.len >= 2) return ..() // max 2 extras, one on each side of the drink
 
 	if(istype(I, /obj/item/weapon/glass_extra))
@@ -26,7 +26,7 @@
 	else
 		return ..()
 
-/obj/item/weapon/reagent_containers/food/drinks/glass2/attack_hand(mob/user as mob)
+/obj/item/weapon/reagent_containers/glass/drinks/glass2/attack_hand(mob/user as mob)
 	if(src != user.get_inactive_hand())
 		return ..()
 

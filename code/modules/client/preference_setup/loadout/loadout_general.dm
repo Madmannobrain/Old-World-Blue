@@ -32,7 +32,7 @@
 
 /datum/gear/flask
 	display_name = "flask"
-	path = /obj/item/weapon/reagent_containers/food/drinks/flask/barflask
+	path = /obj/item/weapon/reagent_containers/glass/drinks/flask/barflask
 
 /datum/gear/flask/New()
 	..()
@@ -40,7 +40,7 @@
 
 /datum/gear/vacflask
 	display_name = "vacuum-flask"
-	path = /obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask
+	path = /obj/item/weapon/reagent_containers/glass/drinks/flask/vacuumflask
 
 /datum/gear/vacflask/New()
 	..()

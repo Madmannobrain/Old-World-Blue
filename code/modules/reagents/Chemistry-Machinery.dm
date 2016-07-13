@@ -318,8 +318,8 @@
 			return
 
 	if (istype(O,/obj/item/weapon/reagent_containers/glass) || \
-		istype(O,/obj/item/weapon/reagent_containers/food/drinks/glass2) || \
-		istype(O,/obj/item/weapon/reagent_containers/food/drinks/shaker))
+		istype(O,/obj/item/weapon/reagent_containers/glass/drinks/glass2) || \
+		istype(O,/obj/item/weapon/reagent_containers/glass/drinks/shaker))
 
 		if (beaker)
 			return 1
