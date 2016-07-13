@@ -118,6 +118,6 @@
 	icon_state = "wardenrevolver"
 	caliber = "32"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	fire_sound = 'sound/weapons/impulserevolver.wav'
+	fire_sound = 'sound/weapons/fireimpulserevolver.ogg'
 	ammo_type = /obj/item/ammo_casing/caseless/wardenrevolver
 	max_shells = 6

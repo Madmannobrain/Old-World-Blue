@@ -383,7 +383,7 @@
 	caliber = "5.7x28"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	fire_sound = 'sound/weapons/secpistol.wav'
+	fire_sound = 'sound/weapons/fireimpulsesmg.wav'
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a57x28pdw
 	allowed_magazines = list(/obj/item/ammo_magazine/a57x28pdw, /obj/item/ammo_magazine/a57x28pdw/ap)
@@ -402,7 +402,7 @@
 		icon_state = "impulsepdw-empty"
 
 /obj/item/weapon/gun/projectile/automatic/impulsecarbine
-	name = "impulse PDW"
+	name = "impulse carbine"
 	desc = "The Diemaco Sentinel is an reliable assault carbine. Perfect for CQB. Uses 7.5x54mm rounds."
 	icon_state = "impulsecarbine"
 	item_state = "carbine"
@@ -410,7 +410,7 @@
 	caliber = "7.5x54"
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5)
 	slot_flags = SLOT_BACK
-	fire_sound = 'sound/weapons/impulsecarbine.wav'
+	fire_sound = 'sound/weapons/fireimpulserifle.wav'
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a75x54
 	allowed_magazines = list(/obj/item/ammo_magazine/a75x54, /obj/item/ammo_magazine/a75x54/ap)

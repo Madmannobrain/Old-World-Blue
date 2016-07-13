@@ -159,3 +159,53 @@ obj/item/weapon/gun/energy/retro
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
+
+/obj/item/weapon/gun/energy/lasrifle
+ 	name = "laser rifle"
+ 	icon_state = "lasrifle"
+ 	item_state = "lasrifle"
+ 	desc = "That's the NT L84, a laser rifle of the SA-59 series, a line of laser weaponry produced by Nanotrasen. Used by Themis Security."
+ 	fire_sound = 'sound/weapons/firelasrifle.ogg'
+ 	slot_flags = SLOT_BACK
+ 	w_class = 5
+ 	projectile_type = /obj/item/projectile/beam
+ 	fire_delay = 10 //that's the rifle, so it can't shoot rapid
+ 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+ 	accuracy = 3
+ 	charge_cost = 200
+ 	max_shots = 15
+ 	one_handed_penalty = 6
+
+/obj/item/weapon/gun/energy/lascarbine
+ 	name = "laser carbine"
+ 	icon_state = "lascarbine"
+ 	item_state = "lascarbine"
+ 	desc = "That's the NT L82, a laser carbine of the SA-59 series, a line of laser weaponry produced by Nanotrasen. Used by Themis Security. Has a burst-fire system!"
+ 	fire_sound = 'sound/weapons/firelasrifle.ogg'
+ 	slot_flags = SLOT_BACK
+ 	w_class = 4
+ 	projectile_type = /obj/item/projectile/beam/weaklaser
+ 	fire_delay = 5
+ 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+ 	accuracy = 1
+ 	charge_cost = 100
+ 	max_shots = 21
+ 	one_handed_penalty = 3
+
+ 	firemodes = list(
+ 		list(mode_name="laser", burst=1),
+ 		list(mode_name="laser burst", burst=3, fire_delay=3, move_delay=5, burst_accuracy=list(0,-1,-1), dispersion=list(0.6, 1.0, 1.6))
+ 		)
+
+/obj/item/weapon/gun/energy/laspistol
+ 	name = "laser pistol"
+ 	icon_state = "laspistol"
+ 	item_state = "laspistol"
+ 	desc = "That's the NT P26, a laser pistol of the SA-59 series, a line of laser weaponry produced by Nanotrasen. Used by Themis Security."
+ 	fire_sound = 'sound/weapons/firelaspistol.ogg'
+ 	slot_flags = SLOT_BELT
+ 	w_class = 3
+ 	projectile_type = /obj/item/projectile/beam/weaklaser
+ 	fire_delay = 1
+ 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_POWER = 3)
+ 	accuracy = 1
