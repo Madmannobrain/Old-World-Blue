@@ -1,3 +1,6 @@
+#define CELLS 8
+#define CELLSIZE (32/CELLS)
+
 /obj/item/weapon/reagent_containers
 	name = "Container"
 	desc = "..."
@@ -7,6 +10,7 @@
 	var/amount_per_transfer_from_this = 5
 	var/possible_transfer_amounts = list(5,10,15,25,30)
 	var/volume = 30
+	var/list/center_of_mass = list() // Used for table placement
 
 /obj/item/weapon/reagent_containers/verb/set_APTFT() //set amount_per_transfer_from_this
 	set name = "Set transfer amount"
@@ -20,12 +24,31 @@
 	..()
 	if(!possible_transfer_amounts)
 		src.verbs -= /obj/item/weapon/reagent_containers/verb/set_APTFT
+	if(!pixel_x && !pixel_y && center_of_mass.len)
+		src.pixel_x = rand(-6.0, 6) //Randomizes postion
+		src.pixel_y = rand(-6.0, 6)
 	create_reagents(volume)
 
 /obj/item/weapon/reagent_containers/attack_self(mob/user as mob)
 	return
 
-/obj/item/weapon/reagent_containers/afterattack(obj/target, mob/user, flag)
+/obj/item/weapon/reagent_containers/afterattack(atom/A, mob/user, proximity, params)
+	if(proximity && center_of_mass.len && params)
+		if(istype(A, /obj/structure/table) || istype(A, /obj/structure/closet))
+			//Places the item on a grid
+			var/list/mouse_control = params2list(params)
+
+			var/mouse_x = text2num(mouse_control["icon-x"])
+			var/mouse_y = text2num(mouse_control["icon-y"])
+
+			if(!isnum(mouse_x) || !isnum(mouse_y))
+				return
+
+			var/cell_x = max(0, min(CELLS-1, round(mouse_x/CELLSIZE)))
+			var/cell_y = max(0, min(CELLS-1, round(mouse_y/CELLSIZE)))
+
+			pixel_x = (CELLSIZE * (0.5 + cell_x)) - center_of_mass["x"]
+			pixel_y = (CELLSIZE * (0.5 + cell_y)) - center_of_mass["y"]
 	return
 
 /obj/item/weapon/reagent_containers/proc/reagentlist() // For attack logs
@@ -36,6 +59,10 @@
 /obj/item/weapon/reagent_containers/proc/standard_dispenser_refill(var/mob/user, var/obj/structure/reagent_dispensers/target) // This goes into afterattack
 	if(!istype(target))
 		return 0
+
+	if(!reagents)
+		user << "<span class='notice'>[src] can't hold reagents anymore.</span>"
+		return 1
 
 	if(!target.reagents || !target.reagents.total_volume)
 		user << "<span class='notice'>[target] is empty.</span>"
@@ -149,3 +176,6 @@
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	user << "<span class='notice'>You transfer [trans] units of the solution to [target].</span>"
 	return 1
+
+#undef CELLS
+#undef CELLSIZE

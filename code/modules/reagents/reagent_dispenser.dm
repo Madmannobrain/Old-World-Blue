@@ -229,7 +229,7 @@
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			if(do_after(user, 20))
 				user << "<span class='notice'>You unfasten the jug.</span>"
-				var/obj/item/weapon/reagent_containers/glass/cooler_bottle/G = new /obj/item/weapon/reagent_containers/glass/cooler_bottle( src.loc )
+				var/obj/item/weapon/reagent_containers/glass/beaker/cooler_bottle/G = new (src.loc)
 				for(var/datum/reagent/R in reagents.reagent_list)
 					var/total_reagent = reagents.get_reagent_amount(R.id)
 					G.reagents.add_reagent(R.id, total_reagent)
@@ -268,11 +268,11 @@
 				qdel(src)
 		return
 
-	if(istype(I, /obj/item/weapon/reagent_containers/glass/cooler_bottle))
+	if(istype(I, /obj/item/weapon/reagent_containers/glass/beaker/cooler_bottle))
 		src.add_fingerprint(user)
 		if(!bottle)
 			if(anchored)
-				var/obj/item/weapon/reagent_containers/glass/cooler_bottle/G = I
+				var/obj/item/weapon/reagent_containers/glass/beaker/cooler_bottle/G = I
 				user << "<span class='notice'>You start to screw the bottle onto the water-cooler.</span>"
 				if(do_after(user, 20))
 					bottle = 1

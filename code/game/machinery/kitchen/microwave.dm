@@ -136,7 +136,7 @@
 			return
 	else if(istype(O,/obj/item/weapon/reagent_containers/glass) || \
 	        istype(O,/obj/item/weapon/reagent_containers/glass/drinks) || \
-	        istype(O,/obj/item/weapon/reagent_containers/food/condiment) \
+	        istype(O,/obj/item/weapon/reagent_containers/condiment) \
 		)
 		if (!O.reagents)
 			return 1

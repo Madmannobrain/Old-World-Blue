@@ -509,7 +509,7 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/clerical/butler/New()
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/gripper/service(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/bucket(src)
 	src.modules += new /obj/item/weapon/material/minihoe(src)
 	src.modules += new /obj/item/weapon/material/hatchet(src)
 	src.modules += new /obj/item/device/analyzer/plant_analyzer(src)
@@ -562,7 +562,7 @@ var/global/list/robot_modules = list(
 	src.emag = new /obj/item/weapon/pen/chameleon(src)
 
 /obj/item/weapon/robot_module/general/butler/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/weapon/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
+	var/obj/item/weapon/reagent_containers/condiment/enzyme/E = locate() in src.modules
 	E.reagents.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
 		var/obj/item/weapon/reagent_containers/glass/drinks/bottle/small/beer/B = src.emag

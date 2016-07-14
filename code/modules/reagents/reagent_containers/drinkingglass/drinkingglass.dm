@@ -5,7 +5,7 @@
 /var/const/DRINK_ICON_DEFAULT = ""
 /var/const/DRINK_ICON_NOISY = "_noise"
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2
+/obj/item/weapon/reagent_containers/glass/drinking
 	name = "glass" // Name when empty
 	desc = "A generic drinking glass." // Description when empty
 	icon = DRINK_ICON_FILE
@@ -24,7 +24,7 @@
 	possible_transfer_amounts = list(5,10,15,30)
 	flags = OPENCONTAINER
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/examine(mob/M as mob)
+/obj/item/weapon/reagent_containers/glass/drinking/examine(mob/M as mob)
 	..()
 
 	for(var/I in extras)
@@ -41,7 +41,7 @@
 	if(has_fizz())
 		M << "It is fizzing slightly."
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/proc/has_ice()
+/obj/item/weapon/reagent_containers/glass/drinking/proc/has_ice()
 	if(reagents.reagent_list.len > 0)
 		var/datum/reagent/R = reagents.get_master_reagent()
 		if(!((R.id == "ice") || ("ice" in R.glass_special))) // if it's not a cup of ice, and it's not already supposed to have ice in, see if the bartender's put ice in it
@@ -50,7 +50,7 @@
 
 	return 0
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/proc/has_fizz()
+/obj/item/weapon/reagent_containers/glass/drinking/proc/has_fizz()
 	if(reagents.reagent_list.len > 0)
 		var/datum/reagent/R = reagents.get_master_reagent()
 		if(!("fizz" in R.glass_special))
@@ -62,15 +62,15 @@
 				return 1
 	return 0
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/New()
+/obj/item/weapon/reagent_containers/glass/drinking/New()
 	..()
 	icon_state = base_icon
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/on_reagent_change()
+/obj/item/weapon/reagent_containers/glass/drinking/on_reagent_change()
 	..()
 	update_icon()
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/proc/can_add_extra(obj/item/weapon/glass_extra/GE)
+/obj/item/weapon/reagent_containers/glass/drinking/proc/can_add_extra(obj/item/weapon/glass_extra/GE)
 	if(!("[base_icon]_[GE.glass_addition]left" in icon_states(DRINK_ICON_FILE)))
 		return 0
 	if(!("[base_icon]_[GE.glass_addition]right" in icon_states(DRINK_ICON_FILE)))
@@ -78,7 +78,7 @@
 
 	return 1
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/update_icon()
+/obj/item/weapon/reagent_containers/glass/drinking/update_icon()
 	underlays.Cut()
 
 	if (reagents.reagent_list.len > 0)
@@ -144,7 +144,7 @@
 		else continue
 		side = "right"
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/throw_impact()
+/obj/item/weapon/reagent_containers/glass/drinking/throw_impact()
 	if(isGlass)
 		icon_state = base_icon
 		..()

@@ -92,9 +92,9 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/food/New()
 	..()
 	contents = list(
-		/obj/item/weapon/reagent_containers/food/condiment/flour,
-		/obj/item/weapon/reagent_containers/food/condiment/flour,
-		/obj/item/weapon/reagent_containers/food/condiment/flour,
+		/obj/item/weapon/reagent_containers/condiment/flour,
+		/obj/item/weapon/reagent_containers/condiment/flour,
+		/obj/item/weapon/reagent_containers/condiment/flour,
 		/obj/item/weapon/reagent_containers/glass/drinks/milk,
 		/obj/item/weapon/reagent_containers/glass/drinks/milk,
 		/obj/item/weapon/storage/fancy/egg_box,
@@ -149,9 +149,9 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/weapon/storage/firstaid/toxin,
 		/obj/item/weapon/storage/firstaid/o2,
 		/obj/item/weapon/storage/firstaid/adv,
-		/obj/item/weapon/reagent_containers/glass/bottle/antitoxin,
-		/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline,
-		/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+		/obj/item/weapon/reagent_containers/glass/beaker/bottle/antitoxin,
+		/obj/item/weapon/reagent_containers/glass/beaker/bottle/inaprovaline,
+		/obj/item/weapon/reagent_containers/glass/beaker/bottle/stoxin,
 		/obj/item/weapon/storage/box/syringes,
 		/obj/item/weapon/storage/box/autoinjectors)
 
