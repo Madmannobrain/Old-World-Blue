@@ -46,7 +46,7 @@
 	name = "Hydroponics Supply Crate"
 	contains = list(
 			/obj/item/weapon/reagent_containers/spray/plantbgone = 4,
-			/obj/item/weapon/reagent_containers/glass/bottle/ammonia = 2,
+			/obj/item/weapon/reagent_containers/glass/beaker/bottle/ammonia = 2,
 			/obj/item/weapon/material/hatchet,
 			/obj/item/weapon/material/minihoe,
 			/obj/item/device/analyzer/plant_analyzer,

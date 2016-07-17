@@ -244,7 +244,7 @@
 		else if (href_list["createbottle"])
 			if(!condi)
 				var/name = sanitizeSafe(input(usr,"Name:","Name your bottle!",reagents.get_master_reagent_name()), MAX_NAME_LEN)
-				var/obj/item/weapon/reagent_containers/glass/bottle/P = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
+				var/obj/item/weapon/reagent_containers/glass/beaker/bottle/P = new (src.loc)
 				if(!name) name = reagents.get_master_reagent_name()
 				P.name = "[name] bottle"
 				P.pixel_x = rand(-7, 7) //random position
@@ -253,7 +253,7 @@
 				reagents.trans_to_obj(P,60)
 				P.update_icon()
 			else
-				var/obj/item/weapon/reagent_containers/food/condiment/P = new/obj/item/weapon/reagent_containers/food/condiment(src.loc)
+				var/obj/item/weapon/reagent_containers/condiment/P = new(src.loc)
 				reagents.trans_to_obj(P,50)
 
 		else if(href_list["pill_sprite"])
@@ -318,7 +318,7 @@
 			return
 
 	if (istype(O,/obj/item/weapon/reagent_containers/glass) || \
-		istype(O,/obj/item/weapon/reagent_containers/glass/drinks/glass2) || \
+		istype(O,/obj/item/weapon/reagent_containers/glass/drinking) || \
 		istype(O,/obj/item/weapon/reagent_containers/glass/drinks/shaker))
 
 		if (beaker)

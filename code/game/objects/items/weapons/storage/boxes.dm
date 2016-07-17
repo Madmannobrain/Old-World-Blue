@@ -341,7 +341,7 @@
 /obj/item/weapon/storage/box/condimentbottles/New()
 	..()
 	for(var/i = 1 to 7)
-		new /obj/item/weapon/reagent_containers/food/condiment(src)
+		new /obj/item/weapon/reagent_containers/condiment(src)
 
 /obj/item/weapon/storage/box/cups
 	name = "box of paper cups"

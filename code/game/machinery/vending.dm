@@ -630,14 +630,14 @@
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	icon_state = "boozeomat"
 	icon_deny = "boozeomat-deny"
-	products = list(/obj/item/weapon/reagent_containers/glass/drinks/glass2/square = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/rocks = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/shake = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/cocktail = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/shot = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/pint = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/mug = 10,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/wine = 10,
+	products = list(/obj/item/weapon/reagent_containers/glass/drinking/square = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/rocks = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/shake = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/cocktail = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/shot = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/pint = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/mug = 10,
+					/obj/item/weapon/reagent_containers/glass/drinking/wine = 10,
 					/obj/item/weapon/reagent_containers/glass/drinks/bottle/gin = 5,
 					/obj/item/weapon/reagent_containers/glass/drinks/bottle/absinthe = 5,
 					/obj/item/weapon/reagent_containers/glass/drinks/bottle/bluecuracao = 5,
@@ -737,8 +737,8 @@
 	icon_state = "fitness"
 	products = list(/obj/item/weapon/reagent_containers/glass/drinks/milk/smallcarton = 8,
 					/obj/item/weapon/reagent_containers/glass/drinks/milk/smallcarton/chocolate = 8,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/fitnessflask/proteinshake = 8,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/fitnessflask = 8,
+					/obj/item/weapon/reagent_containers/glass/drinking/fitnessflask/proteinshake = 8,
+					/obj/item/weapon/reagent_containers/glass/drinking/fitnessflask = 8,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
 					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 8,
 					/obj/item/weapon/reagent_containers/pill/diet = 8,
@@ -746,8 +746,8 @@
 
 	prices = list(/obj/item/weapon/reagent_containers/glass/drinks/milk/smallcarton = 3,
 					/obj/item/weapon/reagent_containers/glass/drinks/milk/smallcarton/chocolate = 3,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/fitnessflask/proteinshake = 20,
-					/obj/item/weapon/reagent_containers/glass/drinks/glass2/fitnessflask = 5,
+					/obj/item/weapon/reagent_containers/glass/drinking/fitnessflask/proteinshake = 20,
+					/obj/item/weapon/reagent_containers/glass/drinking/fitnessflask = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 5,
 					/obj/item/weapon/reagent_containers/pill/diet = 25,
@@ -800,8 +800,8 @@
 	icon_deny = "med-deny"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access = list(access_medical)
-	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
-					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
+	products = list(/obj/item/weapon/reagent_containers/glass/beaker/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/beaker/bottle/inaprovaline = 4,
+					/obj/item/weapon/reagent_containers/glass/beaker/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/beaker/bottle/toxin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
 					/obj/item/device/healthanalyzer = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
 					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2)
@@ -855,9 +855,10 @@
 	product_ads = "We like plants!;Don't you want some?;The greenest thumbs ever.;We like big plants.;Soft soil..."
 	icon_state = "nutri"
 	icon_deny = "nutri-deny"
-	products = list(/obj/item/weapon/reagent_containers/glass/bottle/eznutrient = 6,/obj/item/weapon/reagent_containers/glass/bottle/left4zed = 4,/obj/item/weapon/reagent_containers/glass/bottle/robustharvest = 3,/obj/item/weapon/plantspray/pests = 20,
+	products = list(/obj/item/weapon/reagent_containers/glass/beaker/bottle/eznutrient = 6,/obj/item/weapon/reagent_containers/glass/beaker/bottle/left4zed = 4,\
+					/obj/item/weapon/reagent_containers/glass/beaker/bottle/robustharvest = 3,/obj/item/weapon/plantspray/pests = 20,
 					/obj/item/weapon/reagent_containers/syringe = 5,/obj/item/weapon/storage/bag/plants = 5)
-	premium = list(/obj/item/weapon/reagent_containers/glass/bottle/ammonia = 10,/obj/item/weapon/reagent_containers/glass/bottle/diethylamine = 5)
+	premium = list(/obj/item/weapon/reagent_containers/glass/beaker/bottle/ammonia = 10,/obj/item/weapon/reagent_containers/glass/beaker/bottle/diethylamine = 5)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/hydroseeds
@@ -925,8 +926,8 @@
 	/obj/item/weapon/material/kitchen/utensil/spoon = 6,
 	/obj/item/weapon/material/knife = 3,
 	/obj/item/weapon/material/kitchen/rollingpin = 2,
-	/obj/item/weapon/reagent_containers/glass/drinks/glass2/square = 8,
-	/obj/item/weapon/reagent_containers/glass/drinks/glass2/shake = 8,
+	/obj/item/weapon/reagent_containers/glass/drinking/square = 8,
+	/obj/item/weapon/reagent_containers/glass/drinking/shake = 8,
 	/obj/item/weapon/glass_extra/stick = 15,
 	/obj/item/weapon/glass_extra/straw = 15,
 	/obj/item/clothing/suit/chef/classic = 2,

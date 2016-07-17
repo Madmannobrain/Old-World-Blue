@@ -1,11 +1,12 @@
 
 ///////////////////////////////////////////////Condiments
-//Notes by Darem: The condiments food-subtype is for stuff you don't actually eat but you use to modify existing food. They all
-//	leave empty containers when used up and can be filled/re-filled with other items. Formatting for first section is identical
-//	to mixed-drinks code. If you want an object that starts pre-loaded, you need to make it in addition to the other code.
+//Notes by Darem: The condiments food-subtype is for stuff you don't actually eat but you use to modify existing food.
+//They all leave empty containers when used up and can be filled/re-filled with other items.
+//Formatting for first section is identical to mixed-drinks code.
+//If you want an object that starts pre-loaded, you need to make it in addition to the other code.
 
 //Food items that aren't eaten normally and leave an empty container behind.
-/obj/item/weapon/reagent_containers/food/condiment
+/obj/item/weapon/reagent_containers/condiment
 	name = "Condiment Container"
 	desc = "Just your average condiment container."
 	icon = 'icons/obj/food.dmi'
@@ -15,23 +16,24 @@
 	center_of_mass = list("x"=16, "y"=6)
 	volume = 50
 
-/obj/item/weapon/reagent_containers/food/condiment/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/item/weapon/reagent_containers/condiment/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
 	return
 
-/obj/item/weapon/reagent_containers/food/condiment/attack_self(var/mob/user as mob)
+/obj/item/weapon/reagent_containers/condiment/attack_self(var/mob/user as mob)
 	return
 
-/obj/item/weapon/reagent_containers/food/condiment/attack(var/mob/M as mob, var/mob/user as mob, var/def_zone)
+/obj/item/weapon/reagent_containers/condiment/attack(var/mob/M as mob, var/mob/user as mob, var/def_zone)
 	if(standard_feed_mob(user, M))
 		return
 
-/obj/item/weapon/reagent_containers/food/condiment/afterattack(var/obj/target, var/mob/user, var/flag)
+/obj/item/weapon/reagent_containers/condiment/afterattack(var/obj/target, var/mob/user, var/flag)
 	if(standard_dispenser_refill(user, target))
 		return
 	if(standard_pour_into(user, target))
 		return
 
-	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks)) // These are not opencontainers but we can transfer to them
+	// These are not opencontainers but we can transfer to them
+	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks))
 		if(!reagents || !reagents.total_volume)
 			user << "<span class='notice'>There is no condiment left in \the [src].</span>"
 			return
@@ -45,13 +47,13 @@
 	else
 		..()
 
-/obj/item/weapon/reagent_containers/food/condiment/feed_sound(var/mob/user)
+/obj/item/weapon/reagent_containers/condiment/feed_sound(var/mob/user)
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
-/obj/item/weapon/reagent_containers/food/condiment/self_feed_message(var/mob/user)
+/obj/item/weapon/reagent_containers/condiment/self_feed_message(var/mob/user)
 	user << "<span class='notice'>You swallow some of contents of \the [src].</span>"
 
-/obj/item/weapon/reagent_containers/food/condiment/on_reagent_change()
+/obj/item/weapon/reagent_containers/condiment/on_reagent_change()
 	if(reagents.reagent_list.len > 0)
 		switch(reagents.get_master_reagent_id())
 			if("ketchup")
@@ -113,66 +115,66 @@
 		center_of_mass = list("x"=16, "y"=6)
 		return
 
-/obj/item/weapon/reagent_containers/food/condiment/enzyme
+/obj/item/weapon/reagent_containers/condiment/enzyme
 	name = "Universal Enzyme"
 	desc = "Used in cooking various dishes."
 	icon_state = "enzyme"
 
-/obj/item/weapon/reagent_containers/food/condiment/enzyme/New()
+/obj/item/weapon/reagent_containers/condiment/enzyme/New()
 	..()
 	reagents.add_reagent("enzyme", 50)
 
-/obj/item/weapon/reagent_containers/food/condiment/sugar/New()
+/obj/item/weapon/reagent_containers/condiment/sugar/New()
 	..()
 	reagents.add_reagent("sugar", 50)
 
-/obj/item/weapon/reagent_containers/food/condiment/small
+/obj/item/weapon/reagent_containers/condiment/small
 	possible_transfer_amounts = list(1,20)
 	amount_per_transfer_from_this = 1
 	volume = 20
 	center_of_mass = list()
 
-/obj/item/weapon/reagent_containers/food/condiment/small/on_reagent_change()
+/obj/item/weapon/reagent_containers/condiment/small/on_reagent_change()
 	return
 
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker	//Seperate from above since it's a small shaker rather then
-	name = "salt shaker"											//	a large one.
+/obj/item/weapon/reagent_containers/condiment/small/saltshaker	//Seperate from above since it's a small shaker
+	name = "salt shaker"										//rather then a large one.
 	desc = "Salt. From space oceans, presumably."
 	icon_state = "saltshakersmall"
 
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker/New()
+/obj/item/weapon/reagent_containers/condiment/small/saltshaker/New()
 	..()
 	reagents.add_reagent("sodiumchloride", 20)
 
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill
+/obj/item/weapon/reagent_containers/condiment/small/peppermill
 	name = "pepper mill"
 	desc = "Often used to flavor food or make people sneeze."
 	icon_state = "peppermillsmall"
 
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill/New()
+/obj/item/weapon/reagent_containers/condiment/small/peppermill/New()
 	..()
 	reagents.add_reagent("blackpepper", 20)
 
-/obj/item/weapon/reagent_containers/food/condiment/small/sugar
+/obj/item/weapon/reagent_containers/condiment/small/sugar
 	name = "sugar"
 	desc = "Sweetness in a bottle"
 	icon_state = "sugarsmall"
 
-/obj/item/weapon/reagent_containers/food/condiment/small/sugar/New()
+/obj/item/weapon/reagent_containers/condiment/small/sugar/New()
 	..()
 	reagents.add_reagent("sugar", 20)
 
-/obj/item/weapon/reagent_containers/food/condiment/flour
+/obj/item/weapon/reagent_containers/condiment/flour
 	name = "flour sack"
 	desc = "A big bag of flour. Good for baking!"
 	icon = 'icons/obj/food.dmi'
 	icon_state = "flour"
 	item_state = "flour"
 
-/obj/item/weapon/reagent_containers/food/condiment/flour/on_reagent_change()
+/obj/item/weapon/reagent_containers/condiment/flour/on_reagent_change()
 	return
 
-/obj/item/weapon/reagent_containers/food/condiment/flour/New()
+/obj/item/weapon/reagent_containers/condiment/flour/New()
 	..()
 	reagents.add_reagent("flour", 30)
 	src.pixel_x = rand(-10.0, 10)

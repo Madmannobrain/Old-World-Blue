@@ -33,17 +33,17 @@
 
 /datum/autolathe/recipe/bucket
 	name = "bucket"
-	path = /obj/item/weapon/reagent_containers/glass/bucket
+	path = /obj/item/weapon/reagent_containers/glass/beaker/bucket
 	category = "General"
 
 /datum/autolathe/recipe/cooler_bottle
 	name = "water-cooler bottle"
-	path = /obj/item/weapon/reagent_containers/glass/cooler_bottle
+	path = /obj/item/weapon/reagent_containers/glass/beaker/cooler_bottle
 	category = "General"
 
 /datum/autolathe/recipe/drinkingglass
 	name = "drinking glass"
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/square
+	path = /obj/item/weapon/reagent_containers/glass/drinking/square
 	category = "General"
 	New()
 		..()
@@ -51,25 +51,25 @@
 		name = initial(O.name) // generic recipes yay
 
 /datum/autolathe/recipe/drinkingglass/rocks
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/rocks
+	path = /obj/item/weapon/reagent_containers/glass/drinking/rocks
 
 /datum/autolathe/recipe/drinkingglass/shake
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/shake
+	path = /obj/item/weapon/reagent_containers/glass/drinking/shake
 
 /datum/autolathe/recipe/drinkingglass/cocktail
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/cocktail
+	path = /obj/item/weapon/reagent_containers/glass/drinking/cocktail
 
 /datum/autolathe/recipe/drinkingglass/shot
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/shot
+	path = /obj/item/weapon/reagent_containers/glass/drinking/shot
 
 /datum/autolathe/recipe/drinkingglass/pint
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/pint
+	path = /obj/item/weapon/reagent_containers/glass/drinking/pint
 
 /datum/autolathe/recipe/drinkingglass/mug
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/mug
+	path = /obj/item/weapon/reagent_containers/glass/drinking/mug
 
 /datum/autolathe/recipe/drinkingglass/wine
-	path = /obj/item/weapon/reagent_containers/glass/drinks/glass2/wine
+	path = /obj/item/weapon/reagent_containers/glass/drinking/wine
 
 /datum/autolathe/recipe/flashlight
 	name = "flashlight"

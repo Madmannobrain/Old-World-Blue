@@ -1,4 +1,4 @@
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/square
+/obj/item/weapon/reagent_containers/glass/drinking/square
 	name = "half-pint glass"
 	base_name = "glass"
 	base_icon = "square"
@@ -8,7 +8,7 @@
 	possible_transfer_amounts = list(5,10,15,30)
 	rim_pos = list(23,13,20) // y, x0, x1
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/rocks
+/obj/item/weapon/reagent_containers/glass/drinking/rocks
 	name = "rocks glass"
 	base_name = "glass"
 	base_icon = "rocks"
@@ -17,7 +17,7 @@
 	possible_transfer_amounts = list(5,10,20)
 	rim_pos = list(21, 10, 23)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/shake
+/obj/item/weapon/reagent_containers/glass/drinking/shake
 	name = "milkshake glass"
 	base_name = "glass"
 	base_icon = "shake"
@@ -26,7 +26,7 @@
 	possible_transfer_amounts = list(5,10,15,30)
 	rim_pos = list(25, 13, 21)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/cocktail
+/obj/item/weapon/reagent_containers/glass/drinking/cocktail
 	name = "cocktail glass"
 	base_name = "glass"
 	base_icon = "cocktail"
@@ -35,7 +35,7 @@
 	possible_transfer_amounts = list(5,10,15)
 	rim_pos = list(22, 13, 21)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/shot
+/obj/item/weapon/reagent_containers/glass/drinking/shot
 	name = "shot glass"
 	base_name = "shot"
 	base_icon = "shot"
@@ -44,7 +44,7 @@
 	possible_transfer_amounts = list(1,2,5)
 	rim_pos = list(17, 13, 21)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/pint
+/obj/item/weapon/reagent_containers/glass/drinking/pint
 	name = "pint glass"
 	base_name = "pint"
 	base_icon = "pint"
@@ -53,7 +53,7 @@
 	possible_transfer_amounts = list(5,10,15,30,60)
 	rim_pos = list(25, 12, 21)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/mug
+/obj/item/weapon/reagent_containers/glass/drinking/mug
 	name = "glass mug"
 	base_name = "mug"
 	base_icon = "mug"
@@ -62,7 +62,7 @@
 	possible_transfer_amounts = list(5,10,20,40)
 	rim_pos = list(22, 12, 20)
 
-/obj/item/weapon/reagent_containers/glass/drinks/glass2/wine
+/obj/item/weapon/reagent_containers/glass/drinking/wine
 	name = "wine glass"
 	base_name = "glass"
 	base_icon = "wine"

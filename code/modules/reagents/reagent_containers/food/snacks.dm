@@ -105,7 +105,7 @@
 				user << "This creature does not seem to have a mouth!"
 				return
 
-		if(reagents)								//Handle ingestion of the reagent.
+		if(reagents)			//Handle ingestion of the reagent.
 			playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
 			if(reagents.total_volume)
 				if(reagents.total_volume > bitesize)
