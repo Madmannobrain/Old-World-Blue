@@ -27,7 +27,8 @@
 	. = BB
 	BB = null
 	if(caseless) // I honestly wasn't sure where to stick this part.
-		del(src)
+		qdel(src)
+		return
 	set_dir(pick(cardinal)) //spin spent casings
 	update_icon()
 

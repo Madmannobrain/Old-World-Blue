@@ -17,9 +17,9 @@
 		new /obj/item/weapon/storage/lockbox/medal(src)
 		new /obj/item/device/radio/headset/heads/captain(src)
 		new /obj/item/device/radio/headset/heads/captain/alt(src)
+		new /obj/item/weapon/gun/energy/gun(src)
 		new /obj/item/clothing/suit/armor/captain(src)
 		new /obj/item/weapon/melee/telebaton(src)
-		new /obj/item/weapon/melee/baton/shocker/loaded(src)
 		return
 
 
@@ -43,8 +43,9 @@
 		new /obj/item/device/radio/headset/heads/hop/alt(src)
 		new /obj/item/weapon/storage/box/ids(src)
 		new /obj/item/weapon/storage/box/ids(src)
+		new /obj/item/weapon/gun/energy/gun(src)
+		new /obj/item/weapon/gun/projectile/sec/flash(src)
 		new /obj/item/device/flash(src)
-		new /obj/item/weapon/melee/baton/shocker/loaded(src)
 		return
 
 /obj/structure/closet/secure_closet/hop2
@@ -74,7 +75,6 @@
 		new /obj/item/clothing/head/caphat/hop(src)
 		new /obj/item/clothing/under/gimmick/rank/head_of_personnel/suit(src)
 		new /obj/item/clothing/glasses/sunglasses(src)
-		new /obj/item/weapon/gun/energy/laspistol(src)
 		return
 
 
@@ -108,14 +108,15 @@
 		new /obj/item/taperoll/police(src)
 		new /obj/item/weapon/shield/riot/tele(src)
 		new /obj/item/clothing/accessory/badge/sec/secchief(src)
+		new /obj/item/weapon/storage/box/flashbangs(src)
 		new /obj/item/weapon/storage/belt/security(src)
 		new /obj/item/device/flash(src)
 		new /obj/item/weapon/melee/baton/loaded(src)
+		new /obj/item/weapon/gun/energy/gun(src)
 		new /obj/item/clothing/accessory/holster/waist(src)
 		new /obj/item/clothing/head/beret/secchief(src)
 		new /obj/item/clothing/suit/storage/hooded/wintercoat/security(src)
 		new /obj/item/device/flashlight/maglight(src)
-		new /obj/item/weapon/gun/energy/laspistol(src)
 		return
 
 
@@ -147,8 +148,10 @@
 		new /obj/item/device/radio/headset/headset_sec/alt(src)
 		new /obj/item/taperoll/police(src)
 		new /obj/item/clothing/accessory/badge/sec/overseer(src)
+		new /obj/item/weapon/storage/box/flashbangs(src)
 		new /obj/item/weapon/storage/belt/security(src)
 		new /obj/item/weapon/reagent_containers/spray/pepper(src)
+		new /obj/item/weapon/gun/energy/gun(src)
 		new /obj/item/clothing/suit/storage/hooded/wintercoat/security(src)
 		new /obj/item/device/flashlight/maglight(src)
 		new /obj/item/device/megaphone(src)
@@ -198,10 +201,6 @@
 		new /obj/item/weapon/melee/telebaton(src)
 		new /obj/item/weapon/melee/baton/shocker/loaded(src)
 		new /obj/item/weapon/storage/firstaid/sec(src)
-		new /obj/item/weapon/grenade/flashbang(src)
-		new /obj/item/weapon/gun/projectile/impulsesec(src)
-		new /obj/item/ammo_magazine/a57x28(src)
-		new /obj/item/ammo_magazine/a57x28(src)
 		return
 
 
@@ -241,10 +240,6 @@
 		new /obj/item/weapon/melee/telebaton(src)
 		new /obj/item/weapon/melee/baton/shocker/loaded(src)
 		new /obj/item/weapon/storage/firstaid/sec(src)
-		new /obj/item/weapon/gun/projectile/impulsetrauma(src)
-		new /obj/item/ammo_magazine/a10x45(src)
-		new /obj/item/ammo_magazine/a10x45(src)
-		new /obj/item/ammo_magazine/a10x45(src)
 		return
 
 
@@ -308,7 +303,6 @@
 		new /obj/item/device/flashlight/maglight(src)
 		new /obj/item/weapon/reagent_containers/glass/drinks/flask/detflask(src)
 		new /obj/item/weapon/storage/briefcase/crimekit(src)
-		new /obj/item/weapon/melee/baton/shocker/loaded(src)
 		return
 
 /obj/structure/closet/secure_closet/detective/update_icon()

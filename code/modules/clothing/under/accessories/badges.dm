@@ -11,7 +11,7 @@
 	slot_flags = SLOT_BELT | SLOT_TIE
 
 	var/stored_name
-	var/badge_string = "Themis Security"
+	var/badge_string = "Corporate Security"
 
 /obj/item/clothing/accessory/badge/old
 	name = "faded badge"
