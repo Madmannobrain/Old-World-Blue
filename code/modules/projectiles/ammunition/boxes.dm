@@ -34,7 +34,7 @@
 /obj/item/ammo_magazine/a10x45/hp
 	name = "ammo cartridge (10x45mm caseless)"
 	desc = "A hollow-point cartridge for 10x45 impulse guns."
-	icon_state = "traumaticmag-lethal"
+	icon_state = "traumaticmag-nlethal"
 	caliber = "10x45"
 	ammo_type = /obj/item/ammo_casing/caseless/traumatic/hp
 
