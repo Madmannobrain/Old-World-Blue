@@ -1,5 +1,5 @@
 /datum/job/secchief
-	title = "Security Chief"
+	title = "Security Commissioner"
 	flag = SECCHIEF
 	head_position = 1
 	department = "Security"
@@ -41,14 +41,14 @@
 
 
 /datum/job/overseer
-	title = "Overseer"
+	title = "Brig Overseer"
 	flag = OVERSEER
 	department = "Security"
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "security chief"
+	supervisors = "security commissioner"
 	selection_color = "#7CB9E8"
 	idtype = /obj/item/weapon/card/id/security
 	economic_modifier = 5
@@ -84,7 +84,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the security chief"
+	supervisors = "security commissioner"
 	selection_color = "#7CB9E8"
 	idtype = /obj/item/weapon/card/id/security
 	alt_titles = list("Forensic Technician","Investigator")
@@ -120,14 +120,14 @@
 
 
 /datum/job/constable
-	title = "Constable"
+	title = "Colonial Officer"
 	flag = CONSTABLE
 	department = "Security"
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "security chief, overseer and senior constables"
+	supervisors = "commissioner, brig overseer and senior officers"
 	selection_color = "#7CB9E8"
 	idtype = /obj/item/weapon/card/id/security
 	economic_modifier = 4
@@ -154,14 +154,14 @@
 		return 1
 
 /datum/job/seniorconstable
-	title = "Senior Constable"
+	title = "Colonial Senior Officer"
 	flag = SENCONSTABLE
 	department = "Security"
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "security chief and overseer"
+	supervisors = "commissioner and brig overseer"
 	selection_color = "#7CB9E8"
 	idtype = /obj/item/weapon/card/id/security
 	economic_modifier = 4
