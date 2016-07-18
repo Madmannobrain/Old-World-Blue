@@ -138,3 +138,28 @@
 	icon_state = "rapidsyringegun"
 	item_state = "rapidsyringegun"
 	max_darts = 5
+
+/obj/item/weapon/gun/launcher/syringe/rifle
+	name = "tranquilizer rifle"
+	desc = "A spring loaded rifle designed to fit syringes, designed to incapacitate scumbags without using of a lethal force."
+	icon_state = "tranqrifle"
+	item_state = "tranqrifle"
+	w_class = 5
+	force = 10
+	matter = list(DEFAULT_WALL_MATERIAL = 3500)
+	slot_flags = SLOT_BACK
+	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound_text = "a metallic thunk"
+	recoil = 0
+	release_force = 20
+	throw_distance = 20
+	accuracy = 0
+	scoped_accuracy = 3
+	max_darts = 4
+
+/obj/item/weapon/gun/launcher/syringe/rifle/verb/scope()
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+
+	toggle_scope(2.0)

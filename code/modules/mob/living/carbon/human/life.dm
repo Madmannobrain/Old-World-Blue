@@ -1250,6 +1250,10 @@
 					var/obj/item/clothing/head/welding/O = head
 					if(!O.up)
 						found_welder = 1
+				if(!found_welder && istype(head, /obj/item/clothing/head/helmet/combathelm))
+					var/obj/item/clothing/head/helmet/combathelm/O = head
+					if(!O.modetoggled)
+						found_welder = 1
 				if(!found_welder && istype(back, /obj/item/weapon/rig))
 					var/obj/item/weapon/rig/O = back
 					if(O.helmet && O.helmet == head && (O.helmet.body_parts_covered & EYES))

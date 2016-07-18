@@ -354,3 +354,37 @@
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
 	siemens_coefficient = 1
+
+/obj/item/clothing/suit/storage/vest/heavy/combatarmor
+	name = "combat armor"
+	desc = "That's the heavy combat exosuit designed for assault teams."
+	icon_state = "combatarmor_sentinel"
+	item_state = "combatarmor_sentinel"
+	armor = list(melee = 80, bullet = 80, laser = 70, energy = 35, bomb = 70, bio = 0, rad = 0)
+	slowdown = 5
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	siemens_coefficient = 0.1
+	var/modetoggled = 0
+
+	verb/armormode()
+		set category = "Object"
+		set name = "Toggle armor mode"
+		set src in usr
+		if(usr.canmove && !usr.stat && !usr.restrained())
+			src.modetoggled = !src.modetoggled
+			if(src.modetoggled)
+				icon_state = "combatarmor_breacher"
+				usr << "You toggle your armor to the Breacher mode."
+				armor = list(melee = 25, bullet = 40, laser = 30, energy = 35, bomb = 30, bio = 0, rad = 0)
+				slowdown = 1
+				siemens_coefficient = 0.7
+				body_parts_covered = UPPER_TORSO|LOWER_TORSO
+			else
+				src.icon_state = initial(icon_state)
+				usr << "You toggle your armor to the Sentinel mode."
+				armor = list(melee = 80, bullet = 80, laser = 70, energy = 35, bomb = 70, bio = 0, rad = 0)
+				slowdown = 5
+				body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+				siemens_coefficient = 0.1
+
+			update_clothing_icon()
