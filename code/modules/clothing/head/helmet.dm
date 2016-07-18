@@ -159,7 +159,7 @@
 		if(usr.canmove && !usr.stat && !usr.restrained())
 			src.modetoggled = !src.modetoggled
 			if(src.modetoggled)
-				icon_state = "combathelm_breacher"
+				icon_state = "combathelmet_breacher"
 				usr << "You toggle your helmet to the Breacher mode."
 				flags_inv = HIDEEARS
 				flags = THICKMATERIAL
