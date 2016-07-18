@@ -268,14 +268,14 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/suit/storage/vest/constable
-	name = "constable's armor vest"
+	name = "colonial officer's armor vest"
 	desc = "A simple kevlar plate carrier. This one has a security badge clipped to the chest."
 	icon_state = "constablevest"
 	item_state = "constablevest"
 	armor = list(melee = 30, bullet = 25, laser = 25, energy = 10, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/seniorconstable
-	name = "senior constable's armor vest"
+	name = "colonial senior officer's armor vest"
 	desc = "A simple kevlar plate carrier. This one has a security badge clipped to the chest."
 	icon_state = "seniorconstablevest"
 	item_state = "seniorconstablevest"
@@ -287,7 +287,7 @@
 	item_state = "overseervest"
 
 /obj/item/clothing/suit/storage/vest/secchief
-	name = "security chief armor vest"
+	name = "security commissioner armor vest"
 	desc = "A simple kevlar plate carrier. This one has a gold badge clipped to the chest."
 	icon_state = "secchiefvest"
 	item_state = "secchiefvest"
