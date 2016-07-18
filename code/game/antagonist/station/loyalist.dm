@@ -11,8 +11,6 @@ var/datum/antagonist/loyalists/loyalists
 	welcome_text = "You belong to the Company, body and soul. Preserve its interests against the conspirators amongst the crew."
 	victory_text = "The heads of staff remained at their posts! The loyalists win!"
 	loss_text = "The heads of staff did not stop the revolution!"
-	victory_feedback_tag = "win - rev heads killed"
-	loss_feedback_tag = "loss - heads killed"
 	antaghud_indicator = "hudloyalist"
 	flags = 0
 

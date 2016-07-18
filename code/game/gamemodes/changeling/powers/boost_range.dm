@@ -27,5 +27,4 @@
 	src.verbs -= /mob/proc/changeling_boost_range
 	spawn(5)
 		src.verbs += /mob/proc/changeling_boost_range
-	feedback_add_details("changeling_powers","RS")
 	return 1

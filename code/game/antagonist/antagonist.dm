@@ -9,8 +9,6 @@
 	var/leader_welcome_text                 // Text shown to the leader, if any.
 	var/victory_text                        // World output at roundend for victory.
 	var/loss_text                           // As above for loss.
-	var/victory_feedback_tag                // Used by the database for end of round loss.
-	var/loss_feedback_tag                   // Used by the database for end of round loss.
 
 	// Role data.
 	var/id = "traitor"                      // Unique datum identifier.

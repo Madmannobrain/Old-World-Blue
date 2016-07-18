@@ -19,5 +19,4 @@
 	src << "<span class='notice'>We empower ourselves.  Our next ability will be extra potent.</span>"
 	src.mind.changeling.recursive_enhancement = 1
 	src.mind.changeling.chem_charges -= 10
-	feedback_add_details("changeling_powers","RE")
 	return 1

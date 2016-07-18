@@ -20,5 +20,4 @@
 		src << "<span class='notice'>They will be unable to cry out in fear for a little longer.</span>"
 		src.mind.changeling.recursive_enhancement = 0
 	T.silent += duration
-	feedback_add_details("changeling_powers","SS")
 	return 1

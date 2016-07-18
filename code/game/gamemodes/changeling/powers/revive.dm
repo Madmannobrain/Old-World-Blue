@@ -43,7 +43,6 @@
 	C << "<span class='notice'>We have regenerated.</span>"
 	C.update_canmove()
 	C.mind.changeling.purchased_powers -= C
-	feedback_add_details("changeling_powers","CR")
 	C.stat = CONSCIOUS
 	C.timeofdeath = null
 	src.verbs -= /mob/proc/changeling_revive

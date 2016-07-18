@@ -17,5 +17,4 @@
 	T.Paralyse(10)
 	T.make_jittery(100)
 	if(T.reagents)	T.reagents.add_reagent("lexorin", 40)
-	feedback_add_details("changeling_powers","DTHS")
 	return 1

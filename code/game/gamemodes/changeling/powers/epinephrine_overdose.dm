@@ -43,7 +43,6 @@
 				sleep(10)
 			src << "<span class='notice'>We feel our newfound energy fade.</span>"
 
-	feedback_add_details("changeling_powers","UNS")
 	return 1
 
 /datum/reagent/epinephrine

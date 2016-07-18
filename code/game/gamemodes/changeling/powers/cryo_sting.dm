@@ -22,7 +22,6 @@
 		src.mind.changeling.recursive_enhancement = 0
 	if(T.reagents)
 		T.reagents.add_reagent("cryotoxin", inject_amount)
-	feedback_add_details("changeling_powers","CS")
 	src.verbs -= /mob/proc/changeling_cryo_sting
 	spawn(3 MINUTES)
 		src << "<span class='notice'>Our cryogenic string is ready to be used once more.</span>"

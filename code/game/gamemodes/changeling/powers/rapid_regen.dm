@@ -50,5 +50,4 @@
 			"<span class='notice'>We reform our body.  We are whole once more.</span>",
 			"<span class='italics'>You hear organic matter ripping and tearing!</span>")
 
-	feedback_add_details("changeling_powers","RR")
 	return 1

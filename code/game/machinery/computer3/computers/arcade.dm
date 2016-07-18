@@ -32,7 +32,6 @@
 				new /obj/item/projectile/bullet/pistol/cap(src.loc)
 			else if(istype(prizeselect, /obj/item/clothing/suit/syndicatefake)) //Helmet is part of the suit
 				new	/obj/item/clothing/head/syndicatefake(computer.loc)
-			feedback_inc("arcade_win_normal")
 			computer.use_power(500)
 
 
@@ -158,7 +157,6 @@
 			gameover = 1
 			sleep(10)
 			temp = "You have been drained! GAME OVER"
-			feedback_inc("arcade_loss_mana_normal")
 
 	else if ((enemy_hp <= 10) && (enemy_mp > 4))
 		temp = "[enemy_name] heals for 4 health!"
@@ -173,7 +171,6 @@
 	if ((player_mp <= 0) || (player_hp <= 0))
 		gameover = 1
 		temp = "You have been crushed! GAME OVER"
-		feedback_inc("arcade_loss_hp_normal")
 
 	if(interactable())
 		computer.updateUsrDialog()

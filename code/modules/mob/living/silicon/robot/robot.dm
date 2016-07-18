@@ -260,7 +260,6 @@
 	new module_type(src)
 
 	hands.icon_state = lowertext(modtype)
-	feedback_inc("cyborg_[lowertext(modtype)]",1)
 	updatename()
 	notify_ai(ROBOT_NOTIFICATION_NEW_MODULE, module.name)
 

@@ -31,5 +31,4 @@
 	src.verbs -= /mob/proc/changeling_digitalcamo
 	spawn(5)
 		src.verbs += /mob/proc/changeling_digitalcamo
-	feedback_add_details("changeling_powers","CAM")
 	return 1

@@ -15,5 +15,4 @@
 	if(!T)	return 0
 	spawn(rand(300,600))
 		if(T)	T.hallucination += 400
-	feedback_add_details("changeling_powers","HS")
 	return 1

@@ -31,7 +31,6 @@
 	for(var/obj/item/weapon/implant/W in H)
 		implants += W
 	H.monkeyize()
-	feedback_add_details("changeling_powers","LF")
 	return 1
 
 //Transform into a human
@@ -109,6 +108,5 @@
 	O.make_changeling()
 	O.changeling_update_languages(changeling.absorbed_languages)
 
-	feedback_add_details("changeling_powers","LFT")
 	qdel(C)
 	return 1

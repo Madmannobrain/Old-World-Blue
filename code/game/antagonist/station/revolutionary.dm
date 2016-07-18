@@ -11,8 +11,6 @@ var/datum/antagonist/revolutionary/revs
 	welcome_text = "Down with the capitalists! Down with the Bourgeoise!"
 	victory_text = "The heads of staff were relieved of their posts! The revolutionaries win!"
 	loss_text = "The heads of staff managed to stop the revolution!"
-	victory_feedback_tag = "win - heads killed"
-	loss_feedback_tag = "loss - rev heads killed"
 	flags = ANTAG_SUSPICIOUS | ANTAG_VOTABLE
 	antaghud_indicator = "hudrevolutionary"
 

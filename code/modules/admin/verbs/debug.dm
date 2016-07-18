@@ -12,8 +12,6 @@
 		message_admins("[key_name(src)] toggled debugging on.")
 		log_admin("[key_name(src)] toggled debugging on.")
 
-	feedback_add_details("admin_verb","DG2") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 // callproc moved to code/modules/admin/callproc
 
 /client/proc/Cell()
@@ -35,7 +33,6 @@
 		t += "\blue [g]: [env.gas[g]] / [env.gas[g] * R_IDEAL_GAS_EQUATION * env.temperature / env.volume]kPa\n"
 
 	usr.show_message(t, 1)
-	feedback_add_details("admin_verb","ASL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_robotize(var/mob/M in mob_list)
 	set category = "Fun"
@@ -98,7 +95,6 @@
 	for(var/datum/paiCandidate/candidate in paiController.pai_candidates)
 		if(candidate.key == choice.key)
 			paiController.pai_candidates.Remove(candidate)
-	feedback_add_details("admin_verb","MPAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_slimeize(var/mob/M in mob_list)
 	set category = "Fun"
@@ -111,7 +107,6 @@
 		log_admin("[key_name(src)] has slimeized [M.key].")
 		spawn(10)
 			M:slimeize()
-			feedback_add_details("admin_verb","MKMET") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		log_admin("[key_name(usr)] made [key_name(M)] into a slime.")
 		message_admins("\blue [key_name_admin(usr)] made [key_name(M)] into a slime.", 1)
 	else
@@ -222,7 +217,6 @@
 				qdel(O)
 		log_admin("[key_name(src)] has deleted all instances of [hsbitem].")
 		message_admins("[key_name_admin(src)] has deleted all instances of [hsbitem].", 0)
-	feedback_add_details("admin_verb","DELA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_make_powernets()
 	set category = "Debug"
@@ -230,7 +224,6 @@
 	makepowernets()
 	log_admin("[key_name(src)] has remade the powernet. makepowernets() called.")
 	message_admins("[key_name_admin(src)] has remade the powernets. makepowernets() called.", 0)
-	feedback_add_details("admin_verb","MPWN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_tog_aliens()
 	set category = "Server"
@@ -239,7 +232,6 @@
 	config.aliens_allowed = !config.aliens_allowed
 	log_admin("[key_name(src)] has turned aliens [config.aliens_allowed ? "on" : "off"].")
 	message_admins("[key_name_admin(src)] has turned aliens [config.aliens_allowed ? "on" : "off"].", 0)
-	feedback_add_details("admin_verb","TAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_grantfullaccess(var/mob/M in mob_list)
 	set category = "Admin"
@@ -268,7 +260,6 @@
 			H.update_inv_wear_id()
 	else
 		alert("Invalid mob")
-	feedback_add_details("admin_verb","GFA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(src)] has granted [M.key] full access.")
 	message_admins("\blue [key_name_admin(usr)] has granted [M.key] full access.", 1)
 
@@ -290,7 +281,6 @@
 	M.ckey = src.ckey
 	if( isobserver(adminmob) )
 		qdel(adminmob)
-	feedback_add_details("admin_verb","ADC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
 
@@ -422,7 +412,6 @@
 	var/dresscode = input("Select dress for [M]", "Robust quick dress shop") as null|anything in dresspacks
 	if (isnull(dresscode))
 		return
-	feedback_add_details("admin_verb","SEQ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	for (var/obj/item/I in M)
 		if (istype(I, /obj/item/weapon/implant))
 			continue

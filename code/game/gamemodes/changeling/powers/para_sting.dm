@@ -14,5 +14,4 @@
 		return 0
 	T << "<span class='danger'>Your muscles begin to painfully tighten.</span>"
 	T.Weaken(20)
-	feedback_add_details("changeling_powers","PS")
 	return 1

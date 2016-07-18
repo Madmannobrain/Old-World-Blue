@@ -48,7 +48,6 @@ var/datum/admin_secrets/admin_secrets = new()
 	var/name = ""
 	var/category = null
 	var/log = 1
-	var/feedback = 1
 	var/permissions = R_HOST
 	var/warn_before_use = 0
 
@@ -73,9 +72,6 @@ var/datum/admin_secrets/admin_secrets = new()
 
 	if(log)
 		log_and_message_admins("used secret '[name]'", user)
-	if(feedback)
-		feedback_inc("admin_secrets_used",1)
-		feedback_add_details("admin_secrets_used","[name]")
 	return 1
 
 /*************************
