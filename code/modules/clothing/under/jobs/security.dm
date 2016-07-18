@@ -9,7 +9,7 @@
  * Security
  */
 /obj/item/clothing/under/rank/warden
-	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for more robust protection. It has the word \"Brig Overseer\" written on the shoulders."
+	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for more robust protection. It has the word \"Overseer\" written on the shoulders."
 	name = "overseer's jumpsuit"
 	icon_state = "overseeruniform"
 	item_state = "bl_suit"
@@ -25,7 +25,7 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/constable
-	name = "colonial officer's uniform"
+	name = "constable's uniform"
 	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
 	icon_state = "constableuniform"
 	item_state = "bl_suit"
@@ -35,7 +35,7 @@
 	rolled_sleeves = 0
 
 /obj/item/clothing/under/rank/seniorconstable
-	name = "colonial senior officer's uniform"
+	name = "senior constable's uniform"
 	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
 	icon_state = "seniorconstableuniform"
 	item_state = "bl_suit"
@@ -164,8 +164,8 @@
  * Head of Security
  */
 /obj/item/clothing/under/rank/head_of_security
-	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Securty Commissioner\". It has additional armor to protect the wearer."
-	name = "security commissioner's jumpsuit"
+	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Security Chief\". It has additional armor to protect the wearer."
+	name = "security chief's jumpsuit"
 	icon_state = "secchiefuniform"
 	item_state = "bl_suit"
 	worn_state = "secchiefuniform"
@@ -180,8 +180,8 @@
 	rolled_sleeves = 0
 
 /obj/item/clothing/head/helmet/secchief
-	name = "security commissioner's hat"
-	desc = "The hat of the Security Commissioner. For showing the constables who's in charge."
+	name = "Security Chief's Hat"
+	desc = "The hat of the Security Chief. For showing the constables who's in charge."
 	icon_state = "secchiefcap"
 	body_parts_covered = 0
 	siemens_coefficient = 0.8

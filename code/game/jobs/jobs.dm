@@ -107,11 +107,11 @@ var/list/civilian_positions = list(
 
 
 var/list/security_positions = list(
-	"Security Commissioner",
-	"Brig Overseer",
+	"Security Chief",
+	"Overseer",
 	"Detective",
-	"Colonial Officer",
-	"Colonial Senior Officer"
+	"Constable",
+	"Senior Constable"
 )
 
 

@@ -80,7 +80,7 @@
 
 
 /obj/structure/closet/secure_closet/hos
-	name = "colonial commissioner's locker"
+	name = "security chief's locker"
 	req_access = list(access_hos)
 	icon_state = "securesecchief1"
 	icon_closed = "securesecchief"
@@ -121,7 +121,7 @@
 
 
 /obj/structure/closet/secure_closet/warden
-	name = "brig overseer's locker"
+	name = "overseer's locker"
 	req_access = list(access_armory)
 	icon_state = "secureoverseer1"
 	icon_closed = "secureoverseer"
@@ -162,7 +162,7 @@
 
 
 /obj/structure/closet/secure_closet/seniorsecurity
-	name = "colonial senior officer's locker"
+	name = "senior constable's locker"
 	req_access = list(access_brig)
 	icon_state = "secureseniorconstable1"
 	icon_closed = "secureseniorconstable"
@@ -206,7 +206,7 @@
 
 
 /obj/structure/closet/secure_closet/security
-	name = "colonial officer's locker"
+	name = "constable's locker"
 	req_access = list(access_brig)
 	icon_state = "secureconstable1"
 	icon_closed = "secureconstable"
