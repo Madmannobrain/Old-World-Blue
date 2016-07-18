@@ -142,3 +142,33 @@
 	name = "emergency response team medical helmet"
 	desc = "A set of armor worn by medical members of the NanoTrasen Emergency Response Team. Has red and white highlights."
 	icon_state = "erthelmet_med"
+
+/obj/item/clothing/head/helmet/combathelm
+	name = "combat helmet"
+	desc = "It's a helmet designed for assault teams."
+	icon_state = "combathelmet_sentinel"
+	armor = list(melee = 60, bullet = 65, laser = 50, energy = 10, bomb = 35, bio = 0, rad = 0)
+	flags_inv = HIDEEARS
+	siemens_coefficient = 0.2
+	var/modetoggled = 0
+
+	verb/visor()
+		set category = "Object"
+		set name = "Toggle helmet mode"
+		set src in usr
+		if(usr.canmove && !usr.stat && !usr.restrained())
+			src.modetoggled = !src.modetoggled
+			if(src.modetoggled)
+				icon_state = "combathelm_breacher"
+				usr << "You toggle your helmet to the Breacher mode."
+				flags_inv = HIDEEARS
+				flags = THICKMATERIAL
+				armor = list(melee = 35, bullet = 30, laser = 30, energy = 35, bomb = 25, bio = 0, rad = 0)
+				siemens_coefficient = 0.7
+			else
+				src.icon_state = initial(icon_state)
+				usr << "You toggle your helmet to the Sentinel mode."
+				armor = list(melee = 60, bullet = 60, laser = 60, energy = 35, bomb = 60, bio = 0, rad = 0)
+				siemens_coefficient = 0.3
+
+			update_clothing_icon()

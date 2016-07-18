@@ -362,3 +362,14 @@
 	..()
 	reagents.add_reagent("adrenaline",5)
 	reagents.add_reagent("hyperzine",10)
+
+/obj/item/weapon/reagent_containers/syringe/tranq
+	name = "Syringe (tranquilizer)"
+	desc = "Contains sleeping agent."
+
+/obj/item/weapon/reagent_containers/syringe/tranq/New()
+	..()
+	reagents.add_reagent("chloralhydrate",  5)
+	reagents.add_reagent("stoxin", 10)
+	mode = SYRINGE_INJECT
+	update_icon()
