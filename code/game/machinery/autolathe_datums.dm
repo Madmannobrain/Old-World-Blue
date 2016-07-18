@@ -412,48 +412,48 @@
 */
 
 /////// .45
-/datum/autolathe/recipe/10x45
+/datum/autolathe/recipe/ammo10x45
 	name = "ammo cartridge (10x45)"
 	path = /obj/item/ammo_magazine/a10x45
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/10x45hp
+/datum/autolathe/recipe/ammo10x45hp
 	name = "ammo cartridge (10x45 hollowpoint)"
 	path = /obj/item/ammo_magazine/a10x45/hp
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/57x28
+/datum/autolathe/recipe/ammo57x28
 	name = "ammo mag (5.7x28)"
 	path = /obj/item/ammo_magazine/a57x28
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/57x28ap
+/datum/autolathe/recipe/ammo57x28ap
 	name = "ammo mag (5.7x28 AP)"
 	path = /obj/item/ammo_magazine/a57x28/ap
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/57x28pdw
+/datum/autolathe/recipe/ammo57x28pdw
 	name = "PDW ammo mag (5.7x28)"
 	path = /obj/item/ammo_magazine/a57x28pdw
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/57x28pdwap
+/datum/autolathe/recipe/ammo57x28pdwap
 	name = "PDW ammo mag (5.7x28 AP)"
 	path = /obj/item/ammo_magazine/a57x28pdw/ap
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/75x54
+/datum/autolathe/recipe/ammo75x54
 	name = "ammo mag (7.5x54)"
 	path = /obj/item/ammo_magazine/a75x54
 	category = "Arms and Ammunition"
 	hidden = 1
 
-/datum/autolathe/recipe/75x54ap
+/datum/autolathe/recipe/ammo75x54ap
 	name = "ammo mag (7.5x54 AP)"
 	path = /obj/item/ammo_magazine/a75x54/ap
 	category = "Arms and Ammunition"
