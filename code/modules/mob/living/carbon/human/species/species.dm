@@ -159,6 +159,7 @@
 	var/swap_flags = ~HEAVY	// What can we swap place with?
 
 	var/pass_flags = 0
+	var/list/restricted_jobs = list()
 
 /datum/species/New()
 	if(hud_type)

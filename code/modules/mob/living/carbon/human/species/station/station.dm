@@ -78,6 +78,11 @@
 		"Your scales bristle against the cold."
 		)
 
+	restricted_jobs = list("Captain", "Head of Personnel", "Head of Security", "Chief Engineer",\
+						"Research Director", "Chief Medical Officer", "Detective",\
+						"Medical Doctor", "Geneticist", "Chemist", "Scientist", "Roboticist",\
+						"Xenobiologist", "Quartermaster", "Internal Affairs Agent")
+
 /datum/species/unathi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)
@@ -133,6 +138,10 @@
 		"Your overheated skin itches."
 		)
 	cold_discomfort_level = 275
+	restricted_jobs = list("Captain", "Head of Personnel", "Head of Security", "Chief Engineer",\
+						"Research Director", "Chief Medical Officer", "Warden", "Detective", "Security Officer",\
+						"Medical Doctor", "Geneticist", "Scientist", "Roboticist", "Xenobiologist",\
+						"Quartermaster", "Internal Affairs Agent")
 
 /datum/species/tajaran/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
@@ -165,7 +174,9 @@
 	base_color = "#006666"
 
 	reagent_tag = IS_SKRELL
-
+	restricted_jobs = list("Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Chief Medical Officer", "Research Director",\
+						"Warden", "Detective", "Security Officer", "Station Engineer", "Atmospheric Technician",\
+						"Quartermaster", "Cargo Technician", "Shaft Miner")
 	has_limbs = list(
 		BP_TORSO =  list("path" = /obj/item/organ/external/chest),
 		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
@@ -254,6 +265,10 @@
 	flesh_color = "#907E4A"
 
 	reagent_tag = IS_DIONA
+	restricted_jobs = list("Captain", "Head of Personnel", "Head of Security", "Chief Engineer",\
+						"Research Director", "Chief Medical Officer", "Warden", "Detective", "Security Officer",\
+						"Station Engineer", "Atmospheric Technician", "Medical Doctor", "Geneticist", "Paramedic",\
+						"Scientist", "Roboticist", "Bartender", "Quartermaster", "Internal Affairs Agent")
 
 	genders = list(PLURAL)
 /datum/species/diona/can_understand(var/mob/other)

@@ -48,6 +48,10 @@
 	panel.open()
 	return
 
+/mob/new_player/proc/IsJobRestricted(rank)
+	if(client && client.prefs)
+		return client.prefs.IsJobRestricted(rank)
+	return 0
 /mob/new_player/Stat()
 	..()
 
@@ -146,7 +150,10 @@
 			usr << "<span class='danger'>The station is currently exploding. Joining would go poorly.</span>"
 			return
 
-		if(!is_alien_whitelisted(src, all_species[client.prefs.species]))
+		if(jobban_isbanned(src, client.prefs.species))
+			src << alert("You are currently banned from play [client.prefs.species].")
+			return 0
+		else if(!is_alien_whitelisted(src, all_species[client.prefs.species]))
 			src << alert("You are currently not whitelisted to play [client.prefs.species].")
 			return 0
 

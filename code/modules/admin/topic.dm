@@ -508,6 +508,26 @@
 
 		jobs += "</tr></table>"
 
+
+	//Species
+		counter = 0
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='dddddd'><th colspan='[length(playable_species)-1]'><a href='?src=\ref[src];jobban3=Species;jobban4=\ref[M]'>Species</a></th></tr><tr align='center'>"
+		for(var/species in playable_species)
+			if(species == "Human")	continue
+			if(jobban_isbanned(M, species))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[species];jobban4=\ref[M]'><font color=red>[replacetext(species, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[species];jobban4=\ref[M]'>[replacetext(species, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 5) //So things dont get squiiiiished!
+				jobs += "</tr><tr align='center'>"
+				counter = 0
+		jobs += "</tr></table>"
+
+
 	//Non-Human (Green)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
@@ -546,6 +566,7 @@
 		jobs += "<tr bgcolor='ffeeaa'><th colspan='10'><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'>Antagonist Positions</a></th></tr><tr align='center'>"
 
 		// Antagonists.
+		counter = 0
 		for(var/antag_type in all_antag_types)
 			var/datum/antagonist/antag = all_antag_types[antag_type]
 			if(!antag || !antag.bantype)
@@ -554,6 +575,10 @@
 				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.bantype];jobban4=\ref[M]'><font color=red>[replacetext("[antag.role_text]", " ", "&nbsp")]</font></a></td>"
 			else
 				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[antag.bantype];jobban4=\ref[M]'>[replacetext("[antag.role_text]", " ", "&nbsp")]</a></td>"
+
+			if(++counter >= 5)
+				jobs += "</tr><tr align='center'>"
+				counter = 0
 
 		jobs += "</tr></table>"
 
@@ -641,6 +666,9 @@
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
+			if("Species")
+				for(var/species in playable_species-"Human")
+					joblist += species
 			else
 				joblist += href_list["jobban3"]
 

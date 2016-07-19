@@ -86,6 +86,7 @@
 /*
 	var/shock_cap = 30
 	var/hallucination_cap = 25
+	restricted_jobs = list("Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Chief Medical Officer", "Research Director"
 
 // I'm... so... ronrery, so ronery...
 /datum/species/teshari/handle_environment_special(var/mob/living/carbon/human/H)

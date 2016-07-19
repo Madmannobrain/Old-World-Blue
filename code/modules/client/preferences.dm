@@ -131,6 +131,11 @@ datum/preferences
 				if(load_character())
 					return
 
+/datum/preferences/proc/IsJobRestricted(rank)
+	var/datum/species/S = all_species[species]
+	if(rank in S.restricted_jobs) return 1
+	return 0
+
 /datum/preferences/proc/ZeroSkills(var/forced = 0)
 	for(var/V in SKILLS) for(var/datum/skill/S in SKILLS[V])
 		if(!skills.Find(S.ID) || forced)
