@@ -52,7 +52,7 @@ var/global/list/limb_icon_cache = list()
 	if(owner.should_have_organ(O_EYES))
 		var/obj/item/organ/internal/eyes/eyes = owner.internal_organs_by_name[O_EYES]
 		if(eye_icon)
-			var/icon/eyes_icon = new/icon('icons/mob/human_face.dmi', eye_icon)
+			var/icon/eyes_icon = new/icon(owner.species.icobase, "eyes[owner.body_build.index]")
 			if(eyes)
 				eyes_icon.Blend(rgb(eyes.eye_colour[1], eyes.eye_colour[2], eyes.eye_colour[3]), ICON_ADD)
 			else
@@ -86,14 +86,17 @@ var/global/list/limb_icon_cache = list()
 /obj/item/organ/external/proc/get_icon(var/skeletal)
 
 	var/gender = "f"
-	if(owner && owner.gender == MALE)
-		gender = "m"
+	var/body_build = ""
+	if(owner)
+		if(owner.gender == MALE)
+			gender = "m"
+		body_build = owner.body_build.index
 
 	if(force_icon)
-		mob_icon = new /icon(force_icon, "[icon_name][gendered_icon ? "_[gender]" : ""]")
+		mob_icon = new /icon(force_icon, "[icon_name][gendered_icon ? "_[gender]" : ""][body_build]")
 	else
 		if(!dna)
-			mob_icon = new /icon('icons/mob/human_races/r_human.dmi', "[icon_name][gendered_icon ? "_[gender]" : ""]")
+			mob_icon = new /icon('icons/mob/human_races/r_human.dmi', "[icon_name][gendered_icon ? "_[gender]" : ""][body_build]")
 		else
 
 			if(!gendered_icon)
@@ -105,17 +108,17 @@ var/global/list/limb_icon_cache = list()
 					gender = "m"
 
 			if(skeletal)
-				mob_icon = new /icon('icons/mob/human_races/r_skeleton.dmi', "[icon_name][gender ? "_[gender]" : ""]")
+				mob_icon = new /icon('icons/mob/human_races/r_skeleton.dmi', "[icon_name][gender ? "_[gender]" : ""][body_build]")
 			else if (robotic >= ORGAN_ROBOT)
-				mob_icon = new /icon('icons/mob/human_races/robotic.dmi', "[icon_name][gender ? "_[gender]" : ""]")
+				mob_icon = new /icon('icons/mob/human_races/robotic.dmi', "[icon_name][gender ? "_[gender]" : ""][body_build]")
 			else
-				mob_icon = new /icon(species.get_icobase(owner, (status & ORGAN_MUTATED)), "[icon_name][gender ? "_[gender]" : ""]")
+				mob_icon = new /icon(species.get_icobase(owner, (status & ORGAN_MUTATED)), "[icon_name][gender ? "_[gender]" : ""][body_build]")
 				apply_colouration(mob_icon)
 
 			if(body_hair && islist(h_col) && h_col.len >= 3)
 				var/cache_key = "[body_hair]-[icon_name]-[h_col[1]][h_col[2]][h_col[3]]"
 				if(!limb_icon_cache[cache_key])
-					var/icon/I = icon(species.get_icobase(owner), "[icon_name]_[body_hair]")
+					var/icon/I = icon(species.get_icobase(owner), "[icon_name]_[body_hair]")// Body_build. Don't forget.
 					I.Blend(rgb(h_col[1],h_col[2],h_col[3]), ICON_ADD)
 					limb_icon_cache[cache_key] = I
 				mob_icon.Blend(limb_icon_cache[cache_key], ICON_OVERLAY)

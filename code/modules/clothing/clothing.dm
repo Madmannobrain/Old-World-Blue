@@ -561,10 +561,10 @@
 	else if(item_icons && item_icons[slot_w_uniform_str])
 		under_icon = item_icons[slot_w_uniform_str]
 	else
-		under_icon = INV_W_UNIFORM_DEF_ICON
+		under_icon = H.body_build.uniform_icon
 
 	// The _s is because the icon update procs append it.
-	if(("[worn_state]_d_s") in icon_states(under_icon))
+	if(("[worn_state]_d") in icon_states(under_icon))
 		if(rolled_down != 1)
 			rolled_down = 0
 	else
@@ -584,10 +584,10 @@
 	else if(item_icons && item_icons[slot_w_uniform_str])
 		under_icon = item_icons[slot_w_uniform_str]
 	else
-		under_icon = INV_W_UNIFORM_DEF_ICON
+		under_icon = H.body_build.uniform_icon
 
 	// The _s is because the icon update procs append it.
-	if(("[worn_state]_r_s") in icon_states(under_icon))
+	if("[worn_state]_r" in icon_states(under_icon))
 		if(rolled_sleeves != 1)
 			rolled_sleeves = 0
 	else

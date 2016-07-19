@@ -9,8 +9,6 @@
 	var/slot = "decor"
 	var/obj/item/clothing/has_suit = null		//the suit the tie may be attached to
 	var/image/inv_overlay = null	//overlay used when attached to clothing.
-	var/image/mob_overlay = null
-	var/overlay_state = null
 
 	sprite_sheets = list("Teshari" = 'icons/mob/species/seromi/ties.dmi') //Teshari can into webbing, too!
 
@@ -18,36 +16,15 @@
 	on_removed()
 	return ..()
 
-/obj/item/clothing/accessory/proc/get_inv_overlay()
-	if(!inv_overlay)
-		if(!mob_overlay)
-			get_mob_overlay()
-
-		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
-		if(icon_override)
-			if("[tmp_icon_state]_tie" in icon_states(icon_override))
-				tmp_icon_state = "[tmp_icon_state]_tie"
-		inv_overlay = image(icon = mob_overlay.icon, icon_state = tmp_icon_state, dir = SOUTH)
-	return inv_overlay
-
-/obj/item/clothing/accessory/proc/get_mob_overlay()
-	if(!mob_overlay)
-		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
-		if(icon_override)
-			if("[tmp_icon_state]_mob" in icon_states(icon_override))
-				tmp_icon_state = "[tmp_icon_state]_mob"
-			mob_overlay = image("icon" = icon_override, "icon_state" = "[tmp_icon_state]")
-		else
-			mob_overlay = image("icon" = INV_ACCESSORIES_DEF_ICON, "icon_state" = "[tmp_icon_state]")
-	return mob_overlay
-
 //when user attached an accessory to S
 /obj/item/clothing/accessory/proc/on_attached(var/obj/item/clothing/S, var/mob/user)
 	if(!istype(S))
 		return
 	has_suit = S
 	loc = has_suit
-	has_suit.overlays += get_inv_overlay()
+	if(!inv_overlay)
+		inv_overlay = image('icons/mob/ties.dmi', icon_state)
+	has_suit.overlays += inv_overlay
 
 	if(user)
 		user << "<span class='notice'>You attach \the [src] to \the [has_suit].</span>"
@@ -56,7 +33,7 @@
 /obj/item/clothing/accessory/proc/on_removed(var/mob/user)
 	if(!has_suit)
 		return
-	has_suit.overlays -= get_inv_overlay()
+	has_suit.overlays -= inv_overlay
 	has_suit = null
 	if(user)
 		usr.put_in_hands(src)

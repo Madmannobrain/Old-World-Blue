@@ -28,6 +28,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	S["disabilities"]		>> pref.disabilities
 	S["organ_data"]			>> pref.organ_data
 	S["rlimb_data"]			>> pref.rlimb_data
+	S["body_type"]			>> pref.body
 	pref.preview_icon = null
 
 /datum/category_item/player_setup_item/general/body/save_character(var/savefile/S)
@@ -51,6 +52,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	S["disabilities"]		<< pref.disabilities
 	S["organ_data"]			<< pref.organ_data
 	S["rlimb_data"]			<< pref.rlimb_data
+	S["body_type"]			<< pref.body
 
 /datum/category_item/player_setup_item/general/body/sanitize_character(var/savefile/S)
 	if(!pref.species || !(pref.species in playable_species))
@@ -71,6 +73,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	pref.g_eyes			= sanitize_integer(pref.g_eyes, 0, 255, initial(pref.g_eyes))
 	pref.b_eyes			= sanitize_integer(pref.b_eyes, 0, 255, initial(pref.b_eyes))
 	pref.b_type			= sanitize_text(pref.b_type, initial(pref.b_type))
+	var/datum/species/species = all_species[pref.species]
+	pref.body 			= sanitize_inlist(pref.body, species.posible_body_builds, initial(pref.body))
 
 	pref.disabilities	= sanitize_integer(pref.disabilities, 0, 65535, initial(pref.disabilities))
 	if(!pref.organ_data) pref.organ_data = list()
@@ -79,6 +83,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 // Moved from /datum/preferences/proc/copy_to()
 /datum/category_item/player_setup_item/general/body/copy_to_mob(var/mob/living/carbon/human/character)
 	// Copy basic values
+	character.body_build = get_body_build(pref.biological_gender, pref.body) // Restriction handled in sanitize, i thing
 	character.r_eyes	= pref.r_eyes
 	character.g_eyes	= pref.g_eyes
 	character.b_eyes	= pref.b_eyes
@@ -285,7 +290,6 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			if(!(pref.biological_gender in mob_species.genders))
 				pref.set_biological_gender(mob_species.genders[1])
 
-
 			//grab one of the valid hair styles for the newly chosen species
 			var/list/valid_hairstyles = list()
 			for(var/hairstyle in hair_styles_list)
@@ -332,6 +336,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			reset_limbs() // Safety for species with incompatible manufacturers; easier than trying to do it case by case.
 
 			var/datum/species/S = all_species[pref.species]
+			pref.body = get_body_build(pref.biological_gender, pref.body, S.posible_body_builds)
 			pref.age = max(min(pref.age, S.max_age), S.min_age)
 
 			return TOPIC_REFRESH_UPDATE_PREVIEW

@@ -11,6 +11,8 @@
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species = null)
 
+	body_build = get_body_build(gender)
+
 	if(!dna)
 		dna = new /datum/dna(null)
 		// Species name is handled by set_species()
@@ -153,7 +155,7 @@
 /mob/living/carbon/human/proc/implant_loyalty(override = FALSE) // Won't override by default.
 	if(!config.use_loyalty_implants && !override) return // Nuh-uh.
 
-	var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(src)
+	var/obj/item/weapon/implant/loyalty/L = new (src)
 	L.imp_in = src
 	L.implanted = 1
 	var/obj/item/organ/external/affected = src.organs_by_name[BP_HEAD]
