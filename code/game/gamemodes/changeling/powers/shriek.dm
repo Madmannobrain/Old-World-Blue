@@ -64,7 +64,6 @@
 		L.on = 1
 		L.broken()
 
-	feedback_add_details("changeling_powers","RS")
 	return 1
 
 //EMP version

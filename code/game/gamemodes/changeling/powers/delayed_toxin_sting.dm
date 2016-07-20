@@ -32,6 +32,4 @@
 		src << "<span class='notice'>We are ready to use our delayed toxic string once more.</span>"
 		src.verbs |= /mob/proc/changeling_delayed_toxic_sting
 
-
-	feedback_add_details("changeling_powers","DTS")
 	return 1

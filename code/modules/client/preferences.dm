@@ -45,8 +45,9 @@ datum/preferences
 	var/r_eyes = 0						//Eye color
 	var/g_eyes = 0						//Eye color
 	var/b_eyes = 0						//Eye color
-	var/species = "Human"               //Species datum to use.
-	var/species_preview                 //Used for the species selection window.
+	var/species = "Human"				//Species datum to use.
+	var/species_preview					//Used for the species selection window.
+	var/body = "Default"				//character body build name
 	var/list/alternate_languages = list() //Secondary language(s)
 	var/list/language_prefixes = list() //Kanguage prefix keys
 	var/list/gear						//Custom/fluff item loadout.
@@ -119,7 +120,6 @@ datum/preferences
 	set_biological_gender(pick(MALE, FEMALE))
 	real_name = random_name(identifying_gender,species)
 	b_type = RANDOM_BLOOD_TYPE
-
 	gear = list()
 
 	if(istype(C))
@@ -130,6 +130,11 @@ datum/preferences
 			if(load_preferences())
 				if(load_character())
 					return
+
+/datum/preferences/proc/IsJobRestricted(rank)
+	var/datum/species/S = all_species[species]
+	if(rank in S.restricted_jobs) return 1
+	return 0
 
 /datum/preferences/proc/ZeroSkills(var/forced = 0)
 	for(var/V in SKILLS) for(var/datum/skill/S in SKILLS[V])
@@ -260,7 +265,7 @@ datum/preferences
 	if(be_random_name)
 		real_name = random_name(identifying_gender,species)
 
-	// Ask the preferences datums to apply their own settings to the new mob 
+	// Ask the preferences datums to apply their own settings to the new mob
 	player_setup.copy_to_mob(character)
 
 	if(icon_updates)

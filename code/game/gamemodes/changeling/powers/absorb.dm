@@ -56,7 +56,6 @@
 				if(affecting.take_damage(39,0,1,0,"large organic needle"))
 					T:UpdateDamageIcon()
 
-		feedback_add_details("changeling_powers","A[stage]")
 		if(!do_mob(src, T, 150))
 			src << "<span class='warning'>Our absorption of [T] has been interrupted!</span>"
 			changeling.isabsorbing = 0

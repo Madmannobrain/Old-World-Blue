@@ -25,5 +25,4 @@
 		T.disabilities &= ~NEARSIGHTED
 	T.eye_blind = 10
 	T.eye_blurry = 20
-	feedback_add_details("changeling_powers","BS")
 	return 1

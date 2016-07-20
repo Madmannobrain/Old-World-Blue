@@ -39,5 +39,4 @@
 		src.verbs += /mob/proc/changeling_revive
 		src << "<span class='notice'><font size='5'>We are ready to rise.  Use the <b>Revive</b> verb when you are ready.</font></span>"
 
-	feedback_add_details("changeling_powers","FD")
 	return 1

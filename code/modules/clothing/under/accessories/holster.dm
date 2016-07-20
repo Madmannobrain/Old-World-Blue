@@ -118,8 +118,7 @@
 /obj/item/clothing/accessory/holster/waist
 	name = "waist holster"
 	desc = "A handgun holster. Made of expensive leather."
-	icon_state = "holster"
-	overlay_state = "holster_low"
+	icon_state = "holster_low"
 
 /obj/item/clothing/accessory/holster/hip
 	name = "hip holster"

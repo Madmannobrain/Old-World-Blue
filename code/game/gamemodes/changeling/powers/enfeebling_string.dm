@@ -35,5 +35,4 @@
 				H.maxHealth += health_to_take_away
 				if(!H.stat) //It'd be weird to no longer feel weak when you're dead.
 					H << "<span class='notice'>You no longer feel extremly weak.</span>"
-	feedback_add_details("changeling_powers","ES")
 	return 1

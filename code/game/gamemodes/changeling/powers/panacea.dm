@@ -37,5 +37,4 @@
 			C.adjustToxLoss(-heal_amount)
 			sleep(10)
 
-	feedback_add_details("changeling_powers","AP")
 	return 1

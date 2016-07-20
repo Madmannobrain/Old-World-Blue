@@ -12,7 +12,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TGEars") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_ghost_vision()
 	set name = "Show/Hide Ghost Vision"
@@ -27,7 +27,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TGVision") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_ghost_radio()
 	set name = "Show/Hide Radio Chatter"
@@ -42,7 +42,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TGRadio") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_deadchat()
 	set name = "Show/Hide Deadchat"
@@ -57,7 +57,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TDeadChat") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_ooc()
 	set name = "Show/Hide OOC"
@@ -72,7 +72,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_looc()
 	set name = "Show/Hide LOOC"
@@ -87,7 +87,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_typing()
 	set name = "Show/Hide Typing Indicator"
@@ -102,7 +102,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_ahelp_sound()
 	set name = "Toggle Admin Help Sound"
@@ -117,7 +117,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TAHelp") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_lobby_music()
 	set name = "Toggle Lobby Music"
@@ -132,7 +132,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TLobMusic") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_admin_midis()
 	set name = "Toggle Admin MIDIs"
@@ -147,7 +147,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TAMidis") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_ambience()
 	set name = "Toggle Ambience"
@@ -162,7 +162,7 @@
 
 	prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TBeSpecial") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_be_special(role in be_special_flags)
 	set name = "Toggle SpecialRole Candidacy"
@@ -177,7 +177,7 @@
 
 	src << "You will [(prefs.be_special & role_flag) ? "now" : "no longer"] be considered for [role] events (where possible)."
 
-	feedback_add_details("admin_verb","TBeSpecial") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/verb/toggle_safe_firing()
 	set name = "Toggle Gun Firing Intent Requirement"
@@ -190,7 +190,7 @@
 
 	src << "You will now use [(is_preference_enabled(/datum/client_preference/safefiring)) ? "safe" : "dangerous"] firearms firing."
 
-	feedback_add_details("admin_verb","TFiringMode") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 //Toggles for Staff
 //Developers
@@ -207,7 +207,7 @@
 		src << "You will [ (is_preference_enabled(pref_path)) ? "now" : "no longer"] receive debug logs."
 		prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TBeSpecial") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 //Mods
 /client/proc/toggle_attack_logs()
@@ -222,4 +222,4 @@
 		src << "You will [ (is_preference_enabled(pref_path)) ? "now" : "no longer"] receive attack logs."
 		prefs.save_preferences()
 
-	feedback_add_details("admin_verb","TBeSpecial") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+

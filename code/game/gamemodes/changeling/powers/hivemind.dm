@@ -45,7 +45,6 @@ var/list/datum/dna/hivemind_bank = list()
 	changeling.chem_charges -= 10
 	hivemind_bank += chosen_dna
 	src << "<span class='notice'>We channel the DNA of [S] to the air.</span>"
-	feedback_add_details("changeling_powers","HU")
 	return 1
 
 /mob/proc/changeling_hivedownload()
@@ -74,5 +73,4 @@ var/list/datum/dna/hivemind_bank = list()
 	changeling.chem_charges -= 20
 	absorbDNA(chosen_dna)
 	src << "<span class='notice'>We absorb the DNA of [S] from the air.</span>"
-	feedback_add_details("changeling_powers","HD")
 	return 1

@@ -173,15 +173,6 @@ var/list/gamemode_cache = list()
 
 	var/enter_allowed = 1
 
-	var/use_irc_bot = 0
-	var/use_node_bot = 0
-	var/irc_bot_port = 0
-	var/irc_bot_host = ""
-	var/irc_bot_export = 0 // whether the IRC bot in use is a Bot32 (or similar) instance; Bot32 uses world.Export() instead of nudge.py/libnudge
-	var/main_irc = ""
-	var/admin_irc = ""
-	var/python_path = "" //Path to the python executable.  Defaults to "python" on windows and "/usr/bin/env python2" on unix
-	var/use_lib_nudge = 0 //Use the C library nudge instead of the python nudge.
 	var/use_overmap = 0
 
 	var/list/station_levels = list(1)				// Defines which Z-levels the station exists on.
@@ -554,18 +545,6 @@ var/list/gamemode_cache = list()
 				if("allow_holidays")
 					Holiday = 1
 
-				if("use_irc_bot")
-					use_irc_bot = 1
-
-				if("use_node_bot")
-					use_node_bot = 1
-
-				if("irc_bot_port")
-					config.irc_bot_port = value
-
-				if("irc_bot_export")
-					irc_bot_export = 1
-
 				if("ticklag")
 					Ticklag = text2num(value)
 
@@ -616,22 +595,6 @@ var/list/gamemode_cache = list()
 
 				if("comms_password")
 					config.comms_password = value
-
-				if("irc_bot_host")
-					config.irc_bot_host = value
-
-				if("main_irc")
-					config.main_irc = value
-
-				if("admin_irc")
-					config.admin_irc = value
-
-				if("python_path")
-					if(value)
-						config.python_path = value
-
-				if("use_lib_nudge")
-					config.use_lib_nudge = 1
 
 				if("allow_cult_ghostwriter")
 					config.cult_ghostwriter = 1
@@ -888,11 +851,3 @@ var/list/gamemode_cache = list()
 		if(M && M.can_start() && !isnull(config.probabilities[M.config_tag]) && config.probabilities[M.config_tag] > 0)
 			runnable_modes |= M
 	return runnable_modes
-
-/datum/configuration/proc/post_load()
-	//apply a default value to config.python_path, if needed
-	if (!config.python_path)
-		if(world.system_type == UNIX)
-			config.python_path = "/usr/bin/env python2"
-		else //probably windows, if not this should work anyway
-			config.python_path = "python"

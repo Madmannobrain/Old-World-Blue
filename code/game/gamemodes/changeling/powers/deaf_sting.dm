@@ -22,5 +22,4 @@
 	T << "<span class='danger'>Your ears pop and begin ringing loudly!</span>"
 	T.sdisabilities |= DEAF
 	spawn(duration)	T.sdisabilities &= ~DEAF
-	feedback_add_details("changeling_powers","DS")
 	return 1

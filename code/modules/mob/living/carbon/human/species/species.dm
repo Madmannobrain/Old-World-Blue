@@ -27,6 +27,8 @@
 	var/tail_animation                                   // If set, the icon to obtain tail animation states from.
 	var/tail_hair
 
+	var/posible_body_builds = list("Default")
+
 	var/race_key = 0       	                             // Used for mob icon cache string.
 	var/icon/icon_template                               // Used for mob icon generation for non-32x32 species.
 	var/mob_size	= MOB_MEDIUM
@@ -157,6 +159,7 @@
 	var/swap_flags = ~HEAVY	// What can we swap place with?
 
 	var/pass_flags = 0
+	var/list/restricted_jobs = list()
 
 /datum/species/New()
 	if(hud_type)

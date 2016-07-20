@@ -40,5 +40,4 @@
 	T.real_name = chosen_dna.real_name
 	T.UpdateAppearance()
 	domutcheck(T, null)
-	feedback_add_details("changeling_powers","TS")
 	return 1
